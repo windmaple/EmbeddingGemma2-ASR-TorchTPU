@@ -1,0 +1,17 @@
+# Core ML & Audio Dependencies
+# Note: Install PyTorch + torch_tpu in your Cloud TPU Conda environment first.
+numpy>=1.26.0
+scipy>=1.11.0
+pyarrow>=15.0.0
+soundfile>=0.12.1
+soxr>=0.3.7
+jiwer>=3.0.4
+safetensors>=0.4.3
+huggingface_hub>=0.25.0
+
+# EmbeddingGemma 2 (requires transformers w/ Gemma 4 / EmbeddingGemma 2 support)
+transformers>=5.0.0.dev0
+sentence-transformers>=4.0.0
+
+# Optional: 4-gram KenLM prefix beam search rescoring (beam_decode.py / transcribe.py --lm)
+kenlm @ https://github.com/kpu/kenlm/archive/master.zip

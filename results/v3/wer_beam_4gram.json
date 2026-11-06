@@ -1,0 +1,501 @@
+{
+  "decode": "200k-word CTC prefix beam search + 4-gram KenLM (4-gram.bin)",
+  "beam_size": 32,
+  "top_k": 64,
+  "alpha": 0.55,
+  "beta": 2.0,
+  "token_prune": 12.0,
+  "reader": {
+    "name": "b",
+    "kind": "EmbeddingGemma 2 text model cut to layers 0..k-1, fine-tuned",
+    "k": 6,
+    "hidden": 512,
+    "heads": 4,
+    "kv_heads": "2 (local) / 1 (global layer 5,11,..)",
+    "head_dim": "256 (local) / 512 (global layer 5,11,..)",
+    "ffn": 2048,
+    "positions": "rotary (base 10000 local, 1000000 global), 0..T-1",
+    "attention": "bidirectional, no sliding window",
+    "params": 34492674
+  },
+  "scale": 173.41363525390625,
+  "vocab": 200000,
+  "tuning_history": [
+    {
+      "alpha": 0.25,
+      "beta": 0.0,
+      "dev_clean_wer": 0.03897,
+      "dev_other_wer": 0.10407,
+      "avg_dev_wer": 0.07152,
+      "sec": 4.64
+    },
+    {
+      "alpha": 0.25,
+      "beta": 0.5,
+      "dev_clean_wer": 0.0388,
+      "dev_other_wer": 0.1033,
+      "avg_dev_wer": 0.07105,
+      "sec": 3.35
+    },
+    {
+      "alpha": 0.25,
+      "beta": 1.0,
+      "dev_clean_wer": 0.0388,
+      "dev_other_wer": 0.10263,
+      "avg_dev_wer": 0.07072,
+      "sec": 2.81
+    },
+    {
+      "alpha": 0.25,
+      "beta": 1.5,
+      "dev_clean_wer": 0.03913,
+      "dev_other_wer": 0.10281,
+      "avg_dev_wer": 0.07097,
+      "sec": 2.55
+    },
+    {
+      "alpha": 0.25,
+      "beta": 2.0,
+      "dev_clean_wer": 0.03941,
+      "dev_other_wer": 0.10364,
+      "avg_dev_wer": 0.07152,
+      "sec": 2.69
+    },
+    {
+      "alpha": 0.4,
+      "beta": 0.0,
+      "dev_clean_wer": 0.03851,
+      "dev_other_wer": 0.10189,
+      "avg_dev_wer": 0.0702,
+      "sec": 2.66
+    },
+    {
+      "alpha": 0.4,
+      "beta": 0.5,
+      "dev_clean_wer": 0.03829,
+      "dev_other_wer": 0.10006,
+      "avg_dev_wer": 0.06918,
+      "sec": 2.48
+    },
+    {
+      "alpha": 0.4,
+      "beta": 1.0,
+      "dev_clean_wer": 0.03801,
+      "dev_other_wer": 0.099,
+      "avg_dev_wer": 0.06851,
+      "sec": 2.63
+    },
+    {
+      "alpha": 0.4,
+      "beta": 1.5,
+      "dev_clean_wer": 0.03798,
+      "dev_other_wer": 0.09889,
+      "avg_dev_wer": 0.06843,
+      "sec": 2.53
+    },
+    {
+      "alpha": 0.4,
+      "beta": 2.0,
+      "dev_clean_wer": 0.03798,
+      "dev_other_wer": 0.09843,
+      "avg_dev_wer": 0.06821,
+      "sec": 2.87
+    },
+    {
+      "alpha": 0.55,
+      "beta": 0.0,
+      "dev_clean_wer": 0.03963,
+      "dev_other_wer": 0.10277,
+      "avg_dev_wer": 0.0712,
+      "sec": 2.48
+    },
+    {
+      "alpha": 0.55,
+      "beta": 0.5,
+      "dev_clean_wer": 0.03906,
+      "dev_other_wer": 0.1003,
+      "avg_dev_wer": 0.06968,
+      "sec": 2.5
+    },
+    {
+      "alpha": 0.55,
+      "beta": 1.0,
+      "dev_clean_wer": 0.03862,
+      "dev_other_wer": 0.09887,
+      "avg_dev_wer": 0.06874,
+      "sec": 2.73
+    },
+    {
+      "alpha": 0.55,
+      "beta": 1.5,
+      "dev_clean_wer": 0.03805,
+      "dev_other_wer": 0.09741,
+      "avg_dev_wer": 0.06773,
+      "sec": 2.49
+    },
+    {
+      "alpha": 0.55,
+      "beta": 2.0,
+      "dev_clean_wer": 0.0377,
+      "dev_other_wer": 0.0961,
+      "avg_dev_wer": 0.0669,
+      "sec": 2.47
+    },
+    {
+      "alpha": 0.7,
+      "beta": 0.0,
+      "dev_clean_wer": 0.04224,
+      "dev_other_wer": 0.10615,
+      "avg_dev_wer": 0.07419,
+      "sec": 2.96
+    },
+    {
+      "alpha": 0.7,
+      "beta": 0.5,
+      "dev_clean_wer": 0.04105,
+      "dev_other_wer": 0.10365,
+      "avg_dev_wer": 0.07235,
+      "sec": 2.54
+    },
+    {
+      "alpha": 0.7,
+      "beta": 1.0,
+      "dev_clean_wer": 0.04037,
+      "dev_other_wer": 0.1004,
+      "avg_dev_wer": 0.07038,
+      "sec": 2.48
+    },
+    {
+      "alpha": 0.7,
+      "beta": 1.5,
+      "dev_clean_wer": 0.03954,
+      "dev_other_wer": 0.09869,
+      "avg_dev_wer": 0.06911,
+      "sec": 2.69
+    },
+    {
+      "alpha": 0.7,
+      "beta": 2.0,
+      "dev_clean_wer": 0.03902,
+      "dev_other_wer": 0.097,
+      "avg_dev_wer": 0.06801,
+      "sec": 2.5
+    }
+  ],
+  "results": {
+    "dev-clean": {
+      "wer": 0.03755376640564685,
+      "substitutions": 1574,
+      "deletions": 295,
+      "insertions": 174,
+      "hits": 52533,
+      "ref_words": 54402,
+      "utterances": 2703,
+      "wer_whisper_norm": 0.03677,
+      "tpu_extract_s": 15.67,
+      "beam_decode_s": 1.56,
+      "total_decode_s": 17.23,
+      "utterances_with_oov": 169
+    },
+    "dev-other": {
+      "wer": 0.0956465415717987,
+      "substitutions": 3599,
+      "deletions": 923,
+      "insertions": 351,
+      "hits": 46426,
+      "ref_words": 50948,
+      "utterances": 2864,
+      "wer_whisper_norm": 0.09467,
+      "tpu_extract_s": 15.56,
+      "beam_decode_s": 2.48,
+      "total_decode_s": 18.04,
+      "utterances_with_oov": 228
+    },
+    "test-clean": {
+      "wer": 0.04072200243457091,
+      "substitutions": 1642,
+      "deletions": 308,
+      "insertions": 191,
+      "hits": 50626,
+      "ref_words": 52576,
+      "utterances": 2620,
+      "wer_whisper_norm": 0.03955,
+      "tpu_extract_s": 15.84,
+      "beam_decode_s": 1.64,
+      "total_decode_s": 17.48,
+      "utterances_with_oov": 193
+    },
+    "test-other": {
+      "wer": 0.09894350725025314,
+      "substitutions": 3762,
+      "deletions": 1006,
+      "insertions": 411,
+      "hits": 47575,
+      "ref_words": 52343,
+      "utterances": 2939,
+      "wer_whisper_norm": 0.09763,
+      "tpu_extract_s": 15.19,
+      "beam_decode_s": 3.17,
+      "total_decode_s": 18.36,
+      "utterances_with_oov": 248
+    }
+  },
+  "analysis": {
+    "substitutions_test-clean": {
+      "total": 1642,
+      "distinct_pairs": 1366,
+      "top20": [
+        {
+          "ref": "and",
+          "hyp": "in",
+          "count": 15,
+          "homophone": false
+        },
+        {
+          "ref": "a",
+          "hyp": "the",
+          "count": 13,
+          "homophone": false
+        },
+        {
+          "ref": "in",
+          "hyp": "and",
+          "count": 11,
+          "homophone": false
+        },
+        {
+          "ref": "an",
+          "hyp": "and",
+          "count": 10,
+          "homophone": false
+        },
+        {
+          "ref": "anders",
+          "hyp": "andrews",
+          "count": 8,
+          "homophone": false
+        },
+        {
+          "ref": "meter",
+          "hyp": "metre",
+          "count": 8,
+          "homophone": true
+        },
+        {
+          "ref": "i'm",
+          "hyp": "am",
+          "count": 7,
+          "homophone": false
+        },
+        {
+          "ref": "this",
+          "hyp": "the",
+          "count": 7,
+          "homophone": false
+        },
+        {
+          "ref": "the",
+          "hyp": "a",
+          "count": 7,
+          "homophone": false
+        },
+        {
+          "ref": "anyone",
+          "hyp": "one",
+          "count": 6,
+          "homophone": false
+        },
+        {
+          "ref": "servadac",
+          "hyp": "sir",
+          "count": 6,
+          "homophone": false
+        },
+        {
+          "ref": "rodolfo",
+          "hyp": "udolpho",
+          "count": 5,
+          "homophone": false
+        },
+        {
+          "ref": "silvia",
+          "hyp": "sylvia",
+          "count": 5,
+          "homophone": true
+        },
+        {
+          "ref": "o",
+          "hyp": "of",
+          "count": 4,
+          "homophone": false
+        },
+        {
+          "ref": "i've",
+          "hyp": "have",
+          "count": 4,
+          "homophone": false
+        },
+        {
+          "ref": "he's",
+          "hyp": "is",
+          "count": 4,
+          "homophone": false
+        },
+        {
+          "ref": "men",
+          "hyp": "man",
+          "count": 4,
+          "homophone": false
+        },
+        {
+          "ref": "towards",
+          "hyp": "toward",
+          "count": 4,
+          "homophone": false
+        },
+        {
+          "ref": "jago",
+          "hyp": "iago",
+          "count": 4,
+          "homophone": false
+        },
+        {
+          "ref": "bartley",
+          "hyp": "partly",
+          "count": 4,
+          "homophone": false
+        }
+      ],
+      "top20_homophone_pairs": 2,
+      "homophone_share_of_all": 0.11632155907429964
+    },
+    "substitutions_test-other": {
+      "total": 3762,
+      "distinct_pairs": 3100,
+      "top20": [
+        {
+          "ref": "a",
+          "hyp": "the",
+          "count": 32,
+          "homophone": false
+        },
+        {
+          "ref": "in",
+          "hyp": "and",
+          "count": 28,
+          "homophone": false
+        },
+        {
+          "ref": "the",
+          "hyp": "a",
+          "count": 23,
+          "homophone": false
+        },
+        {
+          "ref": "and",
+          "hyp": "in",
+          "count": 17,
+          "homophone": false
+        },
+        {
+          "ref": "an",
+          "hyp": "and",
+          "count": 13,
+          "homophone": false
+        },
+        {
+          "ref": "their",
+          "hyp": "the",
+          "count": 11,
+          "homophone": false
+        },
+        {
+          "ref": "that",
+          "hyp": "the",
+          "count": 10,
+          "homophone": false
+        },
+        {
+          "ref": "de",
+          "hyp": "the",
+          "count": 10,
+          "homophone": false
+        },
+        {
+          "ref": "this",
+          "hyp": "the",
+          "count": 9,
+          "homophone": false
+        },
+        {
+          "ref": "dickie",
+          "hyp": "dicky",
+          "count": 9,
+          "homophone": true
+        },
+        {
+          "ref": "i",
+          "hyp": "and",
+          "count": 8,
+          "homophone": false
+        },
+        {
+          "ref": "murdoch",
+          "hyp": "murdock",
+          "count": 8,
+          "homophone": true
+        },
+        {
+          "ref": "annie",
+          "hyp": "any",
+          "count": 8,
+          "homophone": false
+        },
+        {
+          "ref": "into",
+          "hyp": "to",
+          "count": 7,
+          "homophone": false
+        },
+        {
+          "ref": "to",
+          "hyp": "the",
+          "count": 7,
+          "homophone": false
+        },
+        {
+          "ref": "is",
+          "hyp": "his",
+          "count": 6,
+          "homophone": false
+        },
+        {
+          "ref": "hermon",
+          "hyp": "hermann",
+          "count": 6,
+          "homophone": true
+        },
+        {
+          "ref": "anyone",
+          "hyp": "one",
+          "count": 6,
+          "homophone": false
+        },
+        {
+          "ref": "bessy",
+          "hyp": "bessie",
+          "count": 6,
+          "homophone": true
+        },
+        {
+          "ref": "kine",
+          "hyp": "kind",
+          "count": 6,
+          "homophone": false
+        }
+      ],
+      "top20_homophone_pairs": 4,
+      "homophone_share_of_all": 0.06379585326953748
+    }
+  }
+}

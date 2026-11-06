@@ -1,0 +1,19 @@
+{
+  "audio_path": "~/data/speckled_band/audio_16k.wav",
+  "audio_seconds": 3257.44,
+  "audio_minutes": 54.29,
+  "soft_tokens": 81436,
+  "device": "tpu",
+  "world_size": 8,
+  "encode_seconds": 1.615,
+  "decode_seconds": 4.52,
+  "total_seconds": 6.136,
+  "x_realtime": 530.9,
+  "word_count": 9936,
+  "transcript_preview": "this is a liberalism recording all liebovitz records are in the public domain for more information or to volunteer the at deprave dot or recorded by kirsty ferriere the adventures of sherlock holmes by arthur conan and doyle chapter eight the adventure of this speckled band on glancing over my notes of the seventy odd cases in which i have during the last eight years studied the methods of my friend sherlock holmes i find many tragic some comic a large number merely strange but nonexistent for w",
+  "wer": 0.04439,
+  "substitutions": 282,
+  "deletions": 55,
+  "insertions": 102,
+  "ref_words": 9889
+}

@@ -1,0 +1,288 @@
+{
+  "arch": {
+    "name": "a",
+    "kind": "transformer encoder from scratch",
+    "layers": 6,
+    "d_model": 512,
+    "heads": 8,
+    "ffn": 2048,
+    "activation": "gelu",
+    "norm": "pre-LayerNorm",
+    "positions": "rotary (base 10000)",
+    "input": "LayerNorm -> Linear 512->512",
+    "output": "LayerNorm -> Linear 512->768"
+  },
+  "params": 19573762,
+  "lr": 0.0004,
+  "batch_size": 32,
+  "local_batch_size": 4,
+  "world_size": 8,
+  "warmup": 500,
+  "weight_decay": 0.01,
+  "clip": 1.0,
+  "schedule_steps": 98064,
+  "steps_per_epoch": 8172,
+  "train_utterances": 261486,
+  "train_tokens": 80121094,
+  "vocab": 200000,
+  "dev_split": "dev-clean",
+  "train_split": "train-clean-100,train-clean-360,train-other-500",
+  "train_splits": {
+    "train-clean-100": {
+      "utterances": 28539,
+      "hours": 100.649,
+      "tokens": 9058443,
+      "in_vocab_utterances": 26422,
+      "in_vocab_hours": 92.793,
+      "oov_left_out": 2117
+    },
+    "train-clean-360": {
+      "utterances": 104014,
+      "hours": 363.821,
+      "tokens": 32743845,
+      "in_vocab_utterances": 96482,
+      "in_vocab_hours": 336.446,
+      "oov_left_out": 7532
+    },
+    "train-other-500": {
+      "utterances": 148688,
+      "hours": 497.167,
+      "tokens": 44745063,
+      "in_vocab_utterances": 138582,
+      "in_vocab_hours": 460.995,
+      "oov_left_out": 10106
+    }
+  },
+  "ctc_infeasible_left_out": 0,
+  "env": {
+    "device": "tpu",
+    "world_size": 8,
+    "global_batch_size": 32,
+    "local_batch_size": 4,
+    "precision": "high",
+    "eval_precision": "highest",
+    "torch": "2.15.0+cpu"
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "step": 8172,
+      "train_loss_mean": 1.08532,
+      "dev": {
+        "wer": 0.07760743796825409,
+        "substitutions": 3434,
+        "deletions": 468,
+        "insertions": 320,
+        "ref_words": 54402,
+        "eval_s": 6.68
+      },
+      "wall_s": 1522.09,
+      "max_rss_gb": 2.73,
+      "lr_end": 0.0003939280540981103,
+      "scale": 93.277,
+      "ctc_infeasible_local": 0
+    },
+    {
+      "epoch": 2,
+      "step": 16344,
+      "train_loss_mean": 0.36214,
+      "dev": {
+        "wer": 0.06394985318183899,
+        "substitutions": 2772,
+        "deletions": 416,
+        "insertions": 291,
+        "ref_words": 54402,
+        "eval_s": 6.21
+      },
+      "wall_s": 1528.6,
+      "max_rss_gb": 2.73,
+      "lr_end": 0.00037453113163390386,
+      "scale": 112.129,
+      "ctc_infeasible_local": 0
+    },
+    {
+      "epoch": 3,
+      "step": 24516,
+      "train_loss_mean": 0.28962,
+      "dev": {
+        "wer": 0.05529208481311798,
+        "substitutions": 2446,
+        "deletions": 316,
+        "insertions": 246,
+        "ref_words": 54402,
+        "eval_s": 6.27
+      },
+      "wall_s": 1518.14,
+      "max_rss_gb": 2.73,
+      "lr_end": 0.0003431186848313923,
+      "scale": 119.962,
+      "ctc_infeasible_local": 0
+    },
+    {
+      "epoch": 4,
+      "step": 32688,
+      "train_loss_mean": 0.23927,
+      "dev": {
+        "wer": 0.053086284548044205,
+        "substitutions": 2333,
+        "deletions": 248,
+        "insertions": 307,
+        "ref_words": 54402,
+        "eval_s": 6.37
+      },
+      "wall_s": 1519.04,
+      "max_rss_gb": 2.73,
+      "lr_end": 0.00030185329073656046,
+      "scale": 127.335,
+      "ctc_infeasible_local": 0
+    },
+    {
+      "epoch": 5,
+      "step": 40860,
+      "train_loss_mean": 0.20146,
+      "dev": {
+        "wer": 0.05009007081389427,
+        "substitutions": 2211,
+        "deletions": 282,
+        "insertions": 232,
+        "ref_words": 54402,
+        "eval_s": 6.29
+      },
+      "wall_s": 1541.99,
+      "max_rss_gb": 2.73,
+      "lr_end": 0.00025357584851985716,
+      "scale": 133.751,
+      "ctc_infeasible_local": 0
+    },
+    {
+      "epoch": 6,
+      "step": 49032,
+      "train_loss_mean": 0.16404,
+      "dev": {
+        "wer": 0.04595419391989708,
+        "substitutions": 2013,
+        "deletions": 253,
+        "insertions": 234,
+        "ref_words": 54402,
+        "eval_s": 6.01
+      },
+      "wall_s": 1567.58,
+      "max_rss_gb": 2.73,
+      "lr_end": 0.0002016099989353153,
+      "scale": 140.644,
+      "ctc_infeasible_local": 0
+    },
+    {
+      "epoch": 7,
+      "step": 57204,
+      "train_loss_mean": 0.12892,
+      "dev": {
+        "wer": 0.043821919709444046,
+        "substitutions": 1930,
+        "deletions": 254,
+        "insertions": 200,
+        "ref_words": 54402,
+        "eval_s": 5.51
+      },
+      "wall_s": 1506.82,
+      "max_rss_gb": 2.73,
+      "lr_end": 0.00014953330963289146,
+      "scale": 148.107,
+      "ctc_infeasible_local": 0
+    },
+    {
+      "epoch": 8,
+      "step": 65376,
+      "train_loss_mean": 0.09877,
+      "dev": {
+        "wer": 0.04332561418414116,
+        "substitutions": 1870,
+        "deletions": 232,
+        "insertions": 255,
+        "ref_words": 54402,
+        "eval_s": 5.85
+      },
+      "wall_s": 1521.08,
+      "max_rss_gb": 2.73,
+      "lr_end": 0.00010093097897756354,
+      "scale": 156.299,
+      "ctc_infeasible_local": 0
+    },
+    {
+      "epoch": 9,
+      "step": 73548,
+      "train_loss_mean": 0.07159,
+      "dev": {
+        "wer": 0.04200213402509689,
+        "substitutions": 1835,
+        "deletions": 246,
+        "insertions": 204,
+        "ref_words": 54402,
+        "eval_s": 5.79
+      },
+      "wall_s": 1522.05,
+      "max_rss_gb": 2.73,
+      "lr_end": 5.914901453497579e-05,
+      "scale": 164.084,
+      "ctc_infeasible_local": 0
+    },
+    {
+      "epoch": 10,
+      "step": 81720,
+      "train_loss_mean": 0.04947,
+      "dev": {
+        "wer": 0.04185507819056511,
+        "substitutions": 1845,
+        "deletions": 214,
+        "insertions": 218,
+        "ref_words": 54402,
+        "eval_s": 5.78
+      },
+      "wall_s": 1536.16,
+      "max_rss_gb": 2.73,
+      "lr_end": 2.7063878549784627e-05,
+      "scale": 170.52,
+      "ctc_infeasible_local": 0
+    },
+    {
+      "epoch": 11,
+      "step": 89892,
+      "train_loss_mean": 0.03603,
+      "dev": {
+        "wer": 0.04209404066205025,
+        "substitutions": 1861,
+        "deletions": 210,
+        "insertions": 219,
+        "ref_words": 54402,
+        "eval_s": 5.54
+      },
+      "wall_s": 1524.74,
+      "max_rss_gb": 2.73,
+      "lr_end": 6.884459079489069e-06,
+      "scale": 174.012,
+      "ctc_infeasible_local": 0
+    },
+    {
+      "epoch": 12,
+      "step": 98064,
+      "train_loss_mean": 0.02983,
+      "dev": {
+        "wer": 0.04246167466044426,
+        "substitutions": 1871,
+        "deletions": 221,
+        "insertions": 218,
+        "ref_words": 54402,
+        "eval_s": 5.88
+      },
+      "wall_s": 1513.48,
+      "max_rss_gb": 2.73,
+      "lr_end": 0.0,
+      "scale": 174.629,
+      "ctc_infeasible_local": 0
+    }
+  ],
+  "best_epoch": 10,
+  "best_dev_wer": 0.04185507819056511,
+  "stop_reason": "early stop: no better dev-clean WER for 2 epochs",
+  "wall_s_total": 18418.9
+}

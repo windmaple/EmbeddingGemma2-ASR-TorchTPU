@@ -1,0 +1,32 @@
+{
+  "vocab_size": 200000,
+  "prompt": "task: search result | query: ",
+  "device": "tpu",
+  "world_size": 8,
+  "model_load_s": 12.2,
+  "encode_s": 36.4,
+  "words_per_s": 5498.1,
+  "tpu_vs_cpu_min_cos": 1.0,
+  "table": {
+    "dtype": "float16",
+    "shape": [
+      200000,
+      768
+    ],
+    "norm_min": 0.9998563528060913,
+    "norm_max": 1.0001517534255981
+  },
+  "text_to_text": {
+    "n": 100,
+    "top1": 1.0,
+    "self_cos_min": 0.9999368190765381,
+    "runner_up_cos_max": 0.916832685470581,
+    "seed": 0
+  },
+  "oov": {},
+  "versions": {
+    "torch": "2.15.0+cpu",
+    "sentence_transformers": "6.2.0",
+    "transformers": "5.22.1"
+  }
+}

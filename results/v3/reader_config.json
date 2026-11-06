@@ -1,0 +1,73 @@
+{
+  "version": "v3",
+  "input": {
+    "shape": "[T, 512]",
+    "dtype": "float32",
+    "what": "EmbeddingGemma 2 audio soft tokens (get_audio_features pooler_output), 25 per second"
+  },
+  "context": "bidirectional within the window",
+  "architecture": {
+    "name": "b",
+    "kind": "EmbeddingGemma 2 text model cut to layers 0..k-1, fine-tuned",
+    "k": 6,
+    "hidden": 512,
+    "heads": 4,
+    "kv_heads": "2 (local) / 1 (global layer 5,11,..)",
+    "head_dim": "256 (local) / 512 (global layer 5,11,..)",
+    "ffn": 2048,
+    "positions": "rotary (base 10000 local, 1000000 global), 0..T-1",
+    "attention": "bidirectional, no sliding window",
+    "params": 34492674
+  },
+  "output": {
+    "vector": "[T, 768] L2-normalized",
+    "blank_logit": "[T]"
+  },
+  "logits": "scale * cos(vector, table[w]) for w in vocab; blank from blank_logit",
+  "scale": 173.41363525390625,
+  "vocab": "vocab.txt",
+  "table": {
+    "file": "word_table.npy",
+    "dtype": "float16",
+    "shape": "[200000, 768]",
+    "prompt": "task: search result | query: ",
+    "normalized": true
+  },
+  "decode": "greedy argmax over N+1, collapse repeats, drop blank",
+  "window": {
+    "seconds": 30,
+    "left_overlap_tokens": 96,
+    "right_extra_tokens": 1,
+    "note": "encoder is causal; 96 left-overlap tokens and 1 right-extra token dropped per 30s window"
+  },
+  "weights": {
+    "file": "reader.pt",
+    "format": "torch state_dict, float32; trained on 8x TPU (high precision), evaluated in highest (fp32) precision",
+    "code": "model.py Reader(arch, n_vocab, k, layers)",
+    "keys": "body.* (reader body), blank.weight [1, 768], blank.bias [1], log_scale (scale = exp(log_scale))"
+  },
+  "n_vocab": 200000,
+  "wer": {
+    "dev-clean": {
+      "wer": 0.04448,
+      "utterances": 2703,
+      "ref_words": 54402
+    },
+    "dev-other": {
+      "wer": 0.11816,
+      "utterances": 2864,
+      "ref_words": 50948
+    },
+    "test-clean": {
+      "wer": 0.04919,
+      "utterances": 2620,
+      "ref_words": 52576
+    },
+    "test-other": {
+      "wer": 0.11902,
+      "utterances": 2939,
+      "ref_words": 52343
+    },
+    "decode": "greedy, no language model"
+  }
+}

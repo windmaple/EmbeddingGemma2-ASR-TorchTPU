@@ -1,0 +1,49 @@
+# Byte-compiled / caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.tmp
+
+# Secrets / Environments
+.env
+.env.*
+!.env.example
+.venv/
+venv/
+
+# Large Model Weights, Embeddings, LMs, and Audio Artifacts
+*.pt
+*.pth
+*.safetensors
+*.npy
+*.npz
+*.bin
+*.arpa
+*.arpa.gz
+*.wav
+*.flac
+*.mp3
+*.parquet
+/vocab.txt
+/reader_config.json
+/make_table_report.json
+
+# Training Runs, Logs, Data Caches
+runs/
+data/
+hf_cache/
+soft_tokens_cache/
+torchtpu_cache/
+tmp/
+*.log
+*.tsv

@@ -1,0 +1,327 @@
+{
+  "decode": "greedy argmax over N+1, collapse repeats, drop blank; no language model",
+  "normalization": "lower case, runs of spaces collapsed to one, nothing else",
+  "reader": {
+    "name": "b",
+    "kind": "EmbeddingGemma 2 text model cut to layers 0..k-1, fine-tuned",
+    "k": 6,
+    "hidden": 512,
+    "heads": 4,
+    "kv_heads": "2 (local) / 1 (global layer 5,11,..)",
+    "head_dim": "256 (local) / 512 (global layer 5,11,..)",
+    "ffn": 2048,
+    "positions": "rotary (base 10000 local, 1000000 global), 0..T-1",
+    "attention": "bidirectional, no sliding window",
+    "params": 34492674
+  },
+  "scale": 173.41363525390625,
+  "vocab": 200000,
+  "results": {
+    "dev-clean": {
+      "wer": 0.04448365868901879,
+      "substitutions": 1939,
+      "deletions": 247,
+      "insertions": 234,
+      "hits": 52216,
+      "ref_words": 54402,
+      "utterances": 2703,
+      "wer_whisper_norm": 0.04451,
+      "decode_s": 9.3,
+      "utterances_with_oov": 169
+    },
+    "dev-other": {
+      "wer": 0.11815969223522023,
+      "substitutions": 4733,
+      "deletions": 794,
+      "insertions": 493,
+      "hits": 45421,
+      "ref_words": 50948,
+      "utterances": 2864,
+      "wer_whisper_norm": 0.11873,
+      "decode_s": 6.72,
+      "utterances_with_oov": 228
+    },
+    "test-clean": {
+      "wer": 0.04918594035301278,
+      "substitutions": 2051,
+      "deletions": 284,
+      "insertions": 251,
+      "hits": 50241,
+      "ref_words": 52576,
+      "utterances": 2620,
+      "wer_whisper_norm": 0.04898,
+      "decode_s": 7.01,
+      "utterances_with_oov": 193
+    },
+    "test-other": {
+      "wer": 0.11902260092084901,
+      "substitutions": 4825,
+      "deletions": 830,
+      "insertions": 575,
+      "hits": 46688,
+      "ref_words": 52343,
+      "utterances": 2939,
+      "wer_whisper_norm": 0.11877,
+      "decode_s": 6.99,
+      "utterances_with_oov": 248
+    }
+  },
+  "analysis": {
+    "substitutions_test-clean": {
+      "total": 2051,
+      "distinct_pairs": 1719,
+      "top20": [
+        {
+          "ref": "and",
+          "hyp": "in",
+          "count": 29,
+          "homophone": false
+        },
+        {
+          "ref": "in",
+          "hyp": "and",
+          "count": 18,
+          "homophone": false
+        },
+        {
+          "ref": "a",
+          "hyp": "the",
+          "count": 15,
+          "homophone": false
+        },
+        {
+          "ref": "an",
+          "hyp": "and",
+          "count": 13,
+          "homophone": false
+        },
+        {
+          "ref": "the",
+          "hyp": "a",
+          "count": 11,
+          "homophone": false
+        },
+        {
+          "ref": "rodolfo",
+          "hyp": "udolpho",
+          "count": 8,
+          "homophone": false
+        },
+        {
+          "ref": "meter",
+          "hyp": "metre",
+          "count": 8,
+          "homophone": true
+        },
+        {
+          "ref": "this",
+          "hyp": "the",
+          "count": 6,
+          "homophone": false
+        },
+        {
+          "ref": "of",
+          "hyp": "a",
+          "count": 6,
+          "homophone": false
+        },
+        {
+          "ref": "anyone",
+          "hyp": "one",
+          "count": 6,
+          "homophone": false
+        },
+        {
+          "ref": "boolooroo",
+          "hyp": "libertador",
+          "count": 6,
+          "homophone": false
+        },
+        {
+          "ref": "and",
+          "hyp": "an",
+          "count": 5,
+          "homophone": false
+        },
+        {
+          "ref": "anders",
+          "hyp": "ands",
+          "count": 5,
+          "homophone": false
+        },
+        {
+          "ref": "anders",
+          "hyp": "andrews",
+          "count": 5,
+          "homophone": false
+        },
+        {
+          "ref": "is",
+          "hyp": "as",
+          "count": 4,
+          "homophone": false
+        },
+        {
+          "ref": "as",
+          "hyp": "is",
+          "count": 4,
+          "homophone": false
+        },
+        {
+          "ref": "o",
+          "hyp": "of",
+          "count": 4,
+          "homophone": false
+        },
+        {
+          "ref": "men",
+          "hyp": "man",
+          "count": 4,
+          "homophone": false
+        },
+        {
+          "ref": "jago",
+          "hyp": "iago",
+          "count": 4,
+          "homophone": false
+        },
+        {
+          "ref": "the",
+          "hyp": "their",
+          "count": 4,
+          "homophone": false
+        }
+      ],
+      "top20_homophone_pairs": 1,
+      "homophone_share_of_all": 0.12091662603607996
+    },
+    "substitutions_test-other": {
+      "total": 4825,
+      "distinct_pairs": 4011,
+      "top20": [
+        {
+          "ref": "in",
+          "hyp": "and",
+          "count": 44,
+          "homophone": false
+        },
+        {
+          "ref": "a",
+          "hyp": "the",
+          "count": 36,
+          "homophone": false
+        },
+        {
+          "ref": "and",
+          "hyp": "in",
+          "count": 31,
+          "homophone": false
+        },
+        {
+          "ref": "the",
+          "hyp": "a",
+          "count": 28,
+          "homophone": false
+        },
+        {
+          "ref": "an",
+          "hyp": "and",
+          "count": 14,
+          "homophone": false
+        },
+        {
+          "ref": "de",
+          "hyp": "the",
+          "count": 13,
+          "homophone": false
+        },
+        {
+          "ref": "to",
+          "hyp": "the",
+          "count": 11,
+          "homophone": false
+        },
+        {
+          "ref": "annie",
+          "hyp": "any",
+          "count": 11,
+          "homophone": false
+        },
+        {
+          "ref": "that",
+          "hyp": "the",
+          "count": 10,
+          "homophone": false
+        },
+        {
+          "ref": "i",
+          "hyp": "and",
+          "count": 8,
+          "homophone": false
+        },
+        {
+          "ref": "their",
+          "hyp": "the",
+          "count": 8,
+          "homophone": false
+        },
+        {
+          "ref": "dickie",
+          "hyp": "dicky",
+          "count": 8,
+          "homophone": true
+        },
+        {
+          "ref": "brahman",
+          "hyp": "bramin",
+          "count": 8,
+          "homophone": false
+        },
+        {
+          "ref": "as",
+          "hyp": "is",
+          "count": 7,
+          "homophone": false
+        },
+        {
+          "ref": "i",
+          "hyp": "i'm",
+          "count": 7,
+          "homophone": false
+        },
+        {
+          "ref": "the",
+          "hyp": "to",
+          "count": 7,
+          "homophone": false
+        },
+        {
+          "ref": "man",
+          "hyp": "men",
+          "count": 6,
+          "homophone": false
+        },
+        {
+          "ref": "into",
+          "hyp": "to",
+          "count": 6,
+          "homophone": false
+        },
+        {
+          "ref": "they",
+          "hyp": "there",
+          "count": 6,
+          "homophone": false
+        },
+        {
+          "ref": "this",
+          "hyp": "the",
+          "count": 6,
+          "homophone": false
+        }
+      ],
+      "top20_homophone_pairs": 1,
+      "homophone_share_of_all": 0.06217616580310881
+    }
+  }
+}

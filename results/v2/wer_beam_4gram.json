@@ -1,0 +1,502 @@
+{
+  "decode": "200k-word CTC prefix beam search + 4-gram KenLM (4-gram.bin)",
+  "beam_size": 32,
+  "top_k": 64,
+  "alpha": 0.55,
+  "beta": 2.0,
+  "token_prune": 12.0,
+  "reader": {
+    "name": "a",
+    "kind": "transformer encoder from scratch",
+    "layers": 6,
+    "d_model": 512,
+    "heads": 8,
+    "ffn": 2048,
+    "activation": "gelu",
+    "norm": "pre-LayerNorm",
+    "positions": "rotary (base 10000)",
+    "input": "LayerNorm -> Linear 512->512",
+    "output": "LayerNorm -> Linear 512->768",
+    "params": 19573762
+  },
+  "scale": 170.52088928222656,
+  "vocab": 200000,
+  "tuning_history": [
+    {
+      "alpha": 0.25,
+      "beta": 0.0,
+      "dev_clean_wer": 0.03676,
+      "dev_other_wer": 0.10085,
+      "avg_dev_wer": 0.06881,
+      "sec": 4.06
+    },
+    {
+      "alpha": 0.25,
+      "beta": 0.5,
+      "dev_clean_wer": 0.03669,
+      "dev_other_wer": 0.10036,
+      "avg_dev_wer": 0.06852,
+      "sec": 2.85
+    },
+    {
+      "alpha": 0.25,
+      "beta": 1.0,
+      "dev_clean_wer": 0.03682,
+      "dev_other_wer": 0.09945,
+      "avg_dev_wer": 0.06814,
+      "sec": 2.6
+    },
+    {
+      "alpha": 0.25,
+      "beta": 1.5,
+      "dev_clean_wer": 0.03728,
+      "dev_other_wer": 0.09996,
+      "avg_dev_wer": 0.06862,
+      "sec": 2.03
+    },
+    {
+      "alpha": 0.25,
+      "beta": 2.0,
+      "dev_clean_wer": 0.0375,
+      "dev_other_wer": 0.10024,
+      "avg_dev_wer": 0.06887,
+      "sec": 2.43
+    },
+    {
+      "alpha": 0.4,
+      "beta": 0.0,
+      "dev_clean_wer": 0.03652,
+      "dev_other_wer": 0.09741,
+      "avg_dev_wer": 0.06697,
+      "sec": 2.21
+    },
+    {
+      "alpha": 0.4,
+      "beta": 0.5,
+      "dev_clean_wer": 0.03594,
+      "dev_other_wer": 0.09641,
+      "avg_dev_wer": 0.06617,
+      "sec": 2.26
+    },
+    {
+      "alpha": 0.4,
+      "beta": 1.0,
+      "dev_clean_wer": 0.03575,
+      "dev_other_wer": 0.09559,
+      "avg_dev_wer": 0.06567,
+      "sec": 2.57
+    },
+    {
+      "alpha": 0.4,
+      "beta": 1.5,
+      "dev_clean_wer": 0.03608,
+      "dev_other_wer": 0.09516,
+      "avg_dev_wer": 0.06562,
+      "sec": 2.19
+    },
+    {
+      "alpha": 0.4,
+      "beta": 2.0,
+      "dev_clean_wer": 0.03612,
+      "dev_other_wer": 0.09533,
+      "avg_dev_wer": 0.06573,
+      "sec": 2.2
+    },
+    {
+      "alpha": 0.55,
+      "beta": 0.0,
+      "dev_clean_wer": 0.03713,
+      "dev_other_wer": 0.09714,
+      "avg_dev_wer": 0.06713,
+      "sec": 2.31
+    },
+    {
+      "alpha": 0.55,
+      "beta": 0.5,
+      "dev_clean_wer": 0.03641,
+      "dev_other_wer": 0.09523,
+      "avg_dev_wer": 0.06582,
+      "sec": 2.25
+    },
+    {
+      "alpha": 0.55,
+      "beta": 1.0,
+      "dev_clean_wer": 0.03621,
+      "dev_other_wer": 0.09429,
+      "avg_dev_wer": 0.06525,
+      "sec": 2.43
+    },
+    {
+      "alpha": 0.55,
+      "beta": 1.5,
+      "dev_clean_wer": 0.03614,
+      "dev_other_wer": 0.09341,
+      "avg_dev_wer": 0.06477,
+      "sec": 2.16
+    },
+    {
+      "alpha": 0.55,
+      "beta": 2.0,
+      "dev_clean_wer": 0.03616,
+      "dev_other_wer": 0.09278,
+      "avg_dev_wer": 0.06447,
+      "sec": 2.25
+    },
+    {
+      "alpha": 0.7,
+      "beta": 0.0,
+      "dev_clean_wer": 0.0393,
+      "dev_other_wer": 0.09889,
+      "avg_dev_wer": 0.06909,
+      "sec": 2.42
+    },
+    {
+      "alpha": 0.7,
+      "beta": 0.5,
+      "dev_clean_wer": 0.03834,
+      "dev_other_wer": 0.09671,
+      "avg_dev_wer": 0.06753,
+      "sec": 2.26
+    },
+    {
+      "alpha": 0.7,
+      "beta": 1.0,
+      "dev_clean_wer": 0.03779,
+      "dev_other_wer": 0.09459,
+      "avg_dev_wer": 0.06619,
+      "sec": 2.05
+    },
+    {
+      "alpha": 0.7,
+      "beta": 1.5,
+      "dev_clean_wer": 0.03757,
+      "dev_other_wer": 0.09311,
+      "avg_dev_wer": 0.06534,
+      "sec": 2.38
+    },
+    {
+      "alpha": 0.7,
+      "beta": 2.0,
+      "dev_clean_wer": 0.03737,
+      "dev_other_wer": 0.09215,
+      "avg_dev_wer": 0.06476,
+      "sec": 2.21
+    }
+  ],
+  "results": {
+    "dev-clean": {
+      "wer": 0.03608323223410904,
+      "substitutions": 1522,
+      "deletions": 255,
+      "insertions": 186,
+      "hits": 52625,
+      "ref_words": 54402,
+      "utterances": 2703,
+      "wer_whisper_norm": 0.03506,
+      "tpu_extract_s": 14.67,
+      "beam_decode_s": 1.31,
+      "total_decode_s": 15.98,
+      "utterances_with_oov": 169
+    },
+    "dev-other": {
+      "wer": 0.09260422391457958,
+      "substitutions": 3510,
+      "deletions": 860,
+      "insertions": 348,
+      "hits": 46578,
+      "ref_words": 50948,
+      "utterances": 2864,
+      "wer_whisper_norm": 0.09137,
+      "tpu_extract_s": 15.27,
+      "beam_decode_s": 1.97,
+      "total_decode_s": 17.24,
+      "utterances_with_oov": 228
+    },
+    "test-clean": {
+      "wer": 0.04005629945222155,
+      "substitutions": 1603,
+      "deletions": 301,
+      "insertions": 202,
+      "hits": 50672,
+      "ref_words": 52576,
+      "utterances": 2620,
+      "wer_whisper_norm": 0.03872,
+      "tpu_extract_s": 15.34,
+      "beam_decode_s": 1.26,
+      "total_decode_s": 16.6,
+      "utterances_with_oov": 193
+    },
+    "test-other": {
+      "wer": 0.09376611963395297,
+      "substitutions": 3659,
+      "deletions": 802,
+      "insertions": 447,
+      "hits": 47882,
+      "ref_words": 52343,
+      "utterances": 2939,
+      "wer_whisper_norm": 0.092,
+      "tpu_extract_s": 14.33,
+      "beam_decode_s": 2.61,
+      "total_decode_s": 16.94,
+      "utterances_with_oov": 248
+    }
+  },
+  "analysis": {
+    "substitutions_test-clean": {
+      "total": 1603,
+      "distinct_pairs": 1320,
+      "top20": [
+        {
+          "ref": "and",
+          "hyp": "in",
+          "count": 22,
+          "homophone": false
+        },
+        {
+          "ref": "an",
+          "hyp": "and",
+          "count": 12,
+          "homophone": false
+        },
+        {
+          "ref": "a",
+          "hyp": "the",
+          "count": 11,
+          "homophone": false
+        },
+        {
+          "ref": "in",
+          "hyp": "and",
+          "count": 11,
+          "homophone": false
+        },
+        {
+          "ref": "the",
+          "hyp": "a",
+          "count": 8,
+          "homophone": false
+        },
+        {
+          "ref": "anders",
+          "hyp": "andrews",
+          "count": 8,
+          "homophone": false
+        },
+        {
+          "ref": "i'm",
+          "hyp": "am",
+          "count": 7,
+          "homophone": false
+        },
+        {
+          "ref": "this",
+          "hyp": "the",
+          "count": 7,
+          "homophone": false
+        },
+        {
+          "ref": "men",
+          "hyp": "man",
+          "count": 6,
+          "homophone": false
+        },
+        {
+          "ref": "meter",
+          "hyp": "metre",
+          "count": 6,
+          "homophone": true
+        },
+        {
+          "ref": "anyone",
+          "hyp": "one",
+          "count": 6,
+          "homophone": false
+        },
+        {
+          "ref": "rodolfo",
+          "hyp": "rudolph",
+          "count": 5,
+          "homophone": false
+        },
+        {
+          "ref": "that",
+          "hyp": "the",
+          "count": 5,
+          "homophone": false
+        },
+        {
+          "ref": "o",
+          "hyp": "of",
+          "count": 5,
+          "homophone": false
+        },
+        {
+          "ref": "margolotte",
+          "hyp": "margaret",
+          "count": 5,
+          "homophone": false
+        },
+        {
+          "ref": "ferdinando",
+          "hyp": "ferdinand",
+          "count": 5,
+          "homophone": false
+        },
+        {
+          "ref": "silvia",
+          "hyp": "sylvia",
+          "count": 5,
+          "homophone": true
+        },
+        {
+          "ref": "of",
+          "hyp": "a",
+          "count": 4,
+          "homophone": false
+        },
+        {
+          "ref": "i've",
+          "hyp": "have",
+          "count": 4,
+          "homophone": false
+        },
+        {
+          "ref": "battleax",
+          "hyp": "battle",
+          "count": 4,
+          "homophone": false
+        }
+      ],
+      "top20_homophone_pairs": 2,
+      "homophone_share_of_all": 0.11790393013100436
+    },
+    "substitutions_test-other": {
+      "total": 3659,
+      "distinct_pairs": 2992,
+      "top20": [
+        {
+          "ref": "a",
+          "hyp": "the",
+          "count": 29,
+          "homophone": false
+        },
+        {
+          "ref": "in",
+          "hyp": "and",
+          "count": 27,
+          "homophone": false
+        },
+        {
+          "ref": "the",
+          "hyp": "a",
+          "count": 26,
+          "homophone": false
+        },
+        {
+          "ref": "and",
+          "hyp": "in",
+          "count": 22,
+          "homophone": false
+        },
+        {
+          "ref": "an",
+          "hyp": "and",
+          "count": 15,
+          "homophone": false
+        },
+        {
+          "ref": "i'm",
+          "hyp": "am",
+          "count": 10,
+          "homophone": false
+        },
+        {
+          "ref": "that",
+          "hyp": "the",
+          "count": 10,
+          "homophone": false
+        },
+        {
+          "ref": "this",
+          "hyp": "the",
+          "count": 10,
+          "homophone": false
+        },
+        {
+          "ref": "fauchelevent",
+          "hyp": "for",
+          "count": 10,
+          "homophone": false
+        },
+        {
+          "ref": "de",
+          "hyp": "the",
+          "count": 10,
+          "homophone": false
+        },
+        {
+          "ref": "i",
+          "hyp": "and",
+          "count": 8,
+          "homophone": false
+        },
+        {
+          "ref": "this",
+          "hyp": "his",
+          "count": 8,
+          "homophone": false
+        },
+        {
+          "ref": "their",
+          "hyp": "the",
+          "count": 8,
+          "homophone": false
+        },
+        {
+          "ref": "murdoch",
+          "hyp": "murdock",
+          "count": 8,
+          "homophone": true
+        },
+        {
+          "ref": "brahman",
+          "hyp": "brahmin",
+          "count": 8,
+          "homophone": false
+        },
+        {
+          "ref": "annie",
+          "hyp": "any",
+          "count": 8,
+          "homophone": false
+        },
+        {
+          "ref": "o",
+          "hyp": "oh",
+          "count": 7,
+          "homophone": true
+        },
+        {
+          "ref": "they",
+          "hyp": "there",
+          "count": 7,
+          "homophone": false
+        },
+        {
+          "ref": "hermon",
+          "hyp": "hermann",
+          "count": 7,
+          "homophone": true
+        },
+        {
+          "ref": "to",
+          "hyp": "the",
+          "count": 7,
+          "homophone": false
+        }
+      ],
+      "top20_homophone_pairs": 3,
+      "homophone_share_of_all": 0.06668488658103307
+    }
+  }
+}

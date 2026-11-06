@@ -1,0 +1,21 @@
+{
+  "audio_path": "~/data/speckled_band/audio_16k.wav",
+  "audio_seconds": 3257.44,
+  "audio_minutes": 54.29,
+  "soft_tokens": 81436,
+  "device": "tpu",
+  "world_size": 1,
+  "decode_mode": "greedy",
+  "encode_seconds": 9.393,
+  "decode_seconds": 5.146,
+  "total_seconds": 14.539,
+  "x_realtime": 224.0,
+  "word_count": 9923,
+  "transcript_preview": "this is a herbivora recording all liebenberg's records are in the public domain for more information or to volunteer the at reproduction dot ork recorded by kirsty frere the adventures of sherlock holmes by arthur conall doyle chapter eight the adventure of the speckled band on glancing over my notes of the seventy odd cases in which i have during the last eight years studied the methods of my friend sherlock holmes i find many tragic some comic a large number merely strange but none commonplace",
+  "wer": 0.04601,
+  "substitutions": 289,
+  "deletions": 66,
+  "insertions": 100,
+  "ref_words": 9889,
+  "wer_whisper_norm": 0.04066
+}
