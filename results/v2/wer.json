@@ -26,6 +26,7 @@
       "hits": 52343,
       "ref_words": 54402,
       "utterances": 2703,
+      "wer_whisper_norm": 0.0414,
       "decode_s": 6.69,
       "utterances_with_oov": 169
     },
@@ -37,6 +38,7 @@
       "hits": 45686,
       "ref_words": 50948,
       "utterances": 2864,
+      "wer_whisper_norm": 0.1128,
       "decode_s": 6.86,
       "utterances_with_oov": 228
     },
@@ -48,6 +50,7 @@
       "hits": 50410,
       "ref_words": 52576,
       "utterances": 2620,
+      "wer_whisper_norm": 0.0449,
       "decode_s": 6.86,
       "utterances_with_oov": 193
     },
@@ -59,6 +62,7 @@
       "hits": 46986,
       "ref_words": 52343,
       "utterances": 2939,
+      "wer_whisper_norm": 0.1131,
       "decode_s": 6.47,
       "utterances_with_oov": 248
     }

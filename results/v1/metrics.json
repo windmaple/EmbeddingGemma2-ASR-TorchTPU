@@ -1,0 +1,416 @@
+{
+  "arch": {
+    "name": "a",
+    "kind": "transformer encoder from scratch",
+    "layers": 6,
+    "d_model": 512,
+    "heads": 8,
+    "ffn": 2048,
+    "activation": "gelu",
+    "norm": "pre-LayerNorm",
+    "positions": "rotary (base 10000)",
+    "input": "LayerNorm -> Linear 512->512",
+    "output": "LayerNorm -> Linear 512->768"
+  },
+  "params": 19573762,
+  "lr": 0.0004,
+  "batch_size": 32,
+  "local_batch_size": 4,
+  "world_size": 8,
+  "warmup": 500,
+  "weight_decay": 0.01,
+  "clip": 1.0,
+  "schedule_steps": 16520,
+  "steps_per_epoch": 826,
+  "train_utterances": 26422,
+  "train_tokens": 8351376,
+  "vocab": 200000,
+  "dev_split": "dev-clean",
+  "train_split": "train-clean-100",
+  "train_splits": {
+    "train-clean-100": {
+      "utterances": 28539,
+      "hours": 100.649,
+      "tokens": 9058443,
+      "in_vocab_utterances": 26422,
+      "in_vocab_hours": 92.793,
+      "oov_left_out": 2117
+    }
+  },
+  "ctc_infeasible_left_out": 0,
+  "env": {
+    "device": "tpu",
+    "world_size": 8,
+    "global_batch_size": 32,
+    "local_batch_size": 4,
+    "precision": "high",
+    "eval_precision": "highest",
+    "torch": "2.15.0+cpu"
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "step": 826,
+      "train_loss_mean": 4.61975,
+      "dev": {
+        "wer": 0.22986286878585815,
+        "substitutions": 4466,
+        "deletions": 7860,
+        "insertions": 179,
+        "ref_words": 54402,
+        "eval_s": 8.65
+      },
+      "wall_s": 154.94,
+      "max_rss_gb": 2.59,
+      "lr_end": 0.00039959143420791,
+      "scale": 25.575,
+      "ctc_infeasible_local": 0
+    },
+    {
+      "epoch": 2,
+      "step": 1652,
+      "train_loss_mean": 1.30346,
+      "dev": {
+        "wer": 0.15633615851402283,
+        "substitutions": 6313,
+        "deletions": 1801,
+        "insertions": 391,
+        "ref_words": 54402,
+        "eval_s": 6.12
+      },
+      "wall_s": 154.08,
+      "max_rss_gb": 2.59,
+      "lr_end": 0.0003949180331656253,
+      "scale": 32.784,
+      "ctc_infeasible_local": 0
+    },
+    {
+      "epoch": 3,
+      "step": 2478,
+      "train_loss_mean": 0.83001,
+      "dev": {
+        "wer": 0.1322745531797409,
+        "substitutions": 5484,
+        "deletions": 1427,
+        "insertions": 285,
+        "ref_words": 54402,
+        "eval_s": 5.89
+      },
+      "wall_s": 154.57,
+      "max_rss_gb": 2.6,
+      "lr_end": 0.0003851414973819663,
+      "scale": 40.542,
+      "ctc_infeasible_local": 0
+    },
+    {
+      "epoch": 4,
+      "step": 3304,
+      "train_loss_mean": 0.5576,
+      "dev": {
+        "wer": 0.11052902787923813,
+        "substitutions": 4853,
+        "deletions": 816,
+        "insertions": 344,
+        "ref_words": 54402,
+        "eval_s": 6.13
+      },
+      "wall_s": 156.38,
+      "max_rss_gb": 2.6,
+      "lr_end": 0.000370517785623793,
+      "scale": 49.033,
+      "ctc_infeasible_local": 0
+    },
+    {
+      "epoch": 5,
+      "step": 4130,
+      "train_loss_mean": 0.4149,
+      "dev": {
+        "wer": 0.10249622911214828,
+        "substitutions": 4668,
+        "deletions": 483,
+        "insertions": 425,
+        "ref_words": 54402,
+        "eval_s": 5.29
+      },
+      "wall_s": 156.59,
+      "max_rss_gb": 2.6,
+      "lr_end": 0.00035142976021692007,
+      "scale": 56.548,
+      "ctc_infeasible_local": 0
+    },
+    {
+      "epoch": 6,
+      "step": 4956,
+      "train_loss_mean": 0.32125,
+      "dev": {
+        "wer": 0.10255137830972672,
+        "substitutions": 4434,
+        "deletions": 736,
+        "insertions": 409,
+        "ref_words": 54402,
+        "eval_s": 5.98
+      },
+      "wall_s": 155.48,
+      "max_rss_gb": 2.6,
+      "lr_end": 0.0003283771633556229,
+      "scale": 64.047,
+      "ctc_infeasible_local": 0
+    },
+    {
+      "epoch": 7,
+      "step": 5782,
+      "train_loss_mean": 0.26178,
+      "dev": {
+        "wer": 0.09212896227836609,
+        "substitutions": 4129,
+        "deletions": 405,
+        "insertions": 478,
+        "ref_words": 54402,
+        "eval_s": 6.18
+      },
+      "wall_s": 156.47,
+      "max_rss_gb": 2.6,
+      "lr_end": 0.00030196353338887407,
+      "scale": 71.37,
+      "ctc_infeasible_local": 0
+    },
+    {
+      "epoch": 8,
+      "step": 6608,
+      "train_loss_mean": 0.20501,
+      "dev": {
+        "wer": 0.08795632421970367,
+        "substitutions": 3951,
+        "deletions": 428,
+        "insertions": 406,
+        "ref_words": 54402,
+        "eval_s": 6.03
+      },
+      "wall_s": 157.69,
+      "max_rss_gb": 2.6,
+      "lr_end": 0.0002728804036270606,
+      "scale": 77.673,
+      "ctc_infeasible_local": 0
+    },
+    {
+      "epoch": 9,
+      "step": 7434,
+      "train_loss_mean": 0.15088,
+      "dev": {
+        "wer": 0.08326900005340576,
+        "substitutions": 3768,
+        "deletions": 378,
+        "insertions": 384,
+        "ref_words": 54402,
+        "eval_s": 6.06
+      },
+      "wall_s": 158.14,
+      "max_rss_gb": 2.6,
+      "lr_end": 0.00024188919735906454,
+      "scale": 83.598,
+      "ctc_infeasible_local": 0
+    },
+    {
+      "epoch": 10,
+      "step": 8260,
+      "train_loss_mean": 0.11088,
+      "dev": {
+        "wer": 0.08451895415782928,
+        "substitutions": 3785,
+        "deletions": 385,
+        "insertions": 428,
+        "ref_words": 54402,
+        "eval_s": 6.25
+      },
+      "wall_s": 158.57,
+      "max_rss_gb": 2.6,
+      "lr_end": 0.00020980129308493953,
+      "scale": 88.724,
+      "ctc_infeasible_local": 0
+    },
+    {
+      "epoch": 11,
+      "step": 9086,
+      "train_loss_mean": 0.07975,
+      "dev": {
+        "wer": 0.0817800834774971,
+        "substitutions": 3652,
+        "deletions": 406,
+        "insertions": 391,
+        "ref_words": 54402,
+        "eval_s": 5.75
+      },
+      "wall_s": 159.07,
+      "max_rss_gb": 2.6,
+      "lr_end": 0.0001774567818748639,
+      "scale": 93.344,
+      "ctc_infeasible_local": 0
+    },
+    {
+      "epoch": 12,
+      "step": 9912,
+      "train_loss_mean": 0.0481,
+      "dev": {
+        "wer": 0.0786551982164383,
+        "substitutions": 3528,
+        "deletions": 377,
+        "insertions": 374,
+        "ref_words": 54402,
+        "eval_s": 5.91
+      },
+      "wall_s": 158.68,
+      "max_rss_gb": 2.6,
+      "lr_end": 0.00014570247300640032,
+      "scale": 97.203,
+      "ctc_infeasible_local": 0
+    },
+    {
+      "epoch": 13,
+      "step": 10738,
+      "train_loss_mean": 0.02693,
+      "dev": {
+        "wer": 0.07861842960119247,
+        "substitutions": 3512,
+        "deletions": 399,
+        "insertions": 366,
+        "ref_words": 54402,
+        "eval_s": 5.56
+      },
+      "wall_s": 160.96,
+      "max_rss_gb": 2.6,
+      "lr_end": 0.00011536972371285962,
+      "scale": 100.697,
+      "ctc_infeasible_local": 0
+    },
+    {
+      "epoch": 14,
+      "step": 11564,
+      "train_loss_mean": 0.01408,
+      "dev": {
+        "wer": 0.07791993021965027,
+        "substitutions": 3453,
+        "deletions": 367,
+        "insertions": 419,
+        "ref_words": 54402,
+        "eval_s": 5.7
+      },
+      "wall_s": 159.64,
+      "max_rss_gb": 2.6,
+      "lr_end": 8.725267348050357e-05,
+      "scale": 103.37,
+      "ctc_infeasible_local": 0
+    },
+    {
+      "epoch": 15,
+      "step": 12390,
+      "train_loss_mean": 0.00948,
+      "dev": {
+        "wer": 0.0779750719666481,
+        "substitutions": 3481,
+        "deletions": 349,
+        "insertions": 412,
+        "ref_words": 54402,
+        "eval_s": 5.1
+      },
+      "wall_s": 157.39,
+      "max_rss_gb": 2.6,
+      "lr_end": 6.208745274085451e-05,
+      "scale": 105.476,
+      "ctc_infeasible_local": 0
+    },
+    {
+      "epoch": 16,
+      "step": 13216,
+      "train_loss_mean": 0.00885,
+      "dev": {
+        "wer": 0.07757067680358887,
+        "substitutions": 3469,
+        "deletions": 329,
+        "insertions": 422,
+        "ref_words": 54402,
+        "eval_s": 5.85
+      },
+      "wall_s": 156.74,
+      "max_rss_gb": 2.6,
+      "lr_end": 4.053291029381649e-05,
+      "scale": 107.105,
+      "ctc_infeasible_local": 0
+    },
+    {
+      "epoch": 17,
+      "step": 14042,
+      "train_loss_mean": 0.00368,
+      "dev": {
+        "wer": 0.07551193237304688,
+        "substitutions": 3388,
+        "deletions": 351,
+        "insertions": 369,
+        "ref_words": 54402,
+        "eval_s": 6.21
+      },
+      "wall_s": 159.21,
+      "max_rss_gb": 2.6,
+      "lr_end": 2.3153364035530368e-05,
+      "scale": 108.175,
+      "ctc_infeasible_local": 0
+    },
+    {
+      "epoch": 18,
+      "step": 14868,
+      "train_loss_mean": 0.00222,
+      "dev": {
+        "wer": 0.07584279775619507,
+        "substitutions": 3413,
+        "deletions": 363,
+        "insertions": 350,
+        "ref_words": 54402,
+        "eval_s": 6.27
+      },
+      "wall_s": 158.18,
+      "max_rss_gb": 2.6,
+      "lr_end": 1.0403826592891541e-05,
+      "scale": 108.769,
+      "ctc_infeasible_local": 0
+    },
+    {
+      "epoch": 19,
+      "step": 15694,
+      "train_loss_mean": 0.00152,
+      "dev": {
+        "wer": 0.07564060389995575,
+        "substitutions": 3414,
+        "deletions": 365,
+        "insertions": 336,
+        "ref_words": 54402,
+        "eval_s": 5.81
+      },
+      "wall_s": 157.65,
+      "max_rss_gb": 2.6,
+      "lr_end": 2.6180926713118116e-06,
+      "scale": 109.03,
+      "ctc_infeasible_local": 0
+    },
+    {
+      "epoch": 20,
+      "step": 16520,
+      "train_loss_mean": 0.00137,
+      "dev": {
+        "wer": 0.07558545470237732,
+        "substitutions": 3408,
+        "deletions": 364,
+        "insertions": 340,
+        "ref_words": 54402,
+        "eval_s": 5.81
+      },
+      "wall_s": 157.78,
+      "max_rss_gb": 2.6,
+      "lr_end": 0.0,
+      "scale": 109.071,
+      "ctc_infeasible_local": 0
+    }
+  ],
+  "best_epoch": 17,
+  "best_dev_wer": 0.07551193237304688,
+  "stop_reason": "reached 20 epochs",
+  "wall_s_total": 3315.0
+}

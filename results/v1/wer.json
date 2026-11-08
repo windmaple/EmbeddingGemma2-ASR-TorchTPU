@@ -1,0 +1,38 @@
+{
+  "version": "v1",
+  "train_split": "train-clean-100 (100h)",
+  "epochs": 20,
+  "params": 19573762,
+  "results": {
+    "dev-clean": {
+      "wer": 0.07551,
+      "wer_whisper_norm": 0.07604,
+      "decode_s": 7.8
+    },
+    "dev-other": {
+      "wer": 0.16132,
+      "wer_whisper_norm": 0.16178,
+      "decode_s": 6.27
+    },
+    "test-clean": {
+      "wer": 0.07654,
+      "wer_whisper_norm": 0.07672,
+      "decode_s": 6.47
+    },
+    "test-other": {
+      "wer": 0.16335,
+      "wer_whisper_norm": 0.16401,
+      "decode_s": 6.66
+    }
+  },
+  "speckled_band_8chip": {
+    "audio_seconds": 3257.44,
+    "audio_minutes": 54.29,
+    "encode_seconds": 1.778,
+    "decode_seconds": 4.603,
+    "total_seconds": 6.381,
+    "x_realtime": 510.5,
+    "wer": 0.06785,
+    "wer_whisper_norm": 0.0623
+  }
+}

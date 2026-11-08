@@ -15,3 +15,6 @@ sentence-transformers>=4.0.0
 
 # Optional: 4-gram KenLM prefix beam search rescoring (beam_decode.py / transcribe.py --lm)
 kenlm @ https://github.com/kpu/kenlm/archive/master.zip
+
+# Plotting (plot_curves.py)
+matplotlib>=3.8.0

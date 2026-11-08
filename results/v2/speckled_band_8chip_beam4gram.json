@@ -16,5 +16,6 @@
   "substitutions": 207,
   "deletions": 62,
   "insertions": 95,
-  "ref_words": 9889
+  "ref_words": 9889,
+  "wer_whisper_norm": 0.0315
 }
